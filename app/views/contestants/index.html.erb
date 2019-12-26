@@ -1,0 +1,7 @@
+<% @blet_contests.each do |contest| %>
+  <section id="contestant-<%= contest.id %>">
+    <%= link_to "#{contest.name}", "/contestants/#{contest.id}" %>
+    <%= contest.age %>
+    <%= contest.hometown %>
+  </section>
+<% end %>  
