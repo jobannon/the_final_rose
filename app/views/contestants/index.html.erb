@@ -1,7 +1,15 @@
-<% @blet_contests.each do |contest| %>
+<% @blet.contestants.each do |contest| %>
   <section id="contestant-<%= contest.id %>">
     <%= link_to "#{contest.name}", "/contestants/#{contest.id}" %>
     <%= contest.age %>
     <%= contest.hometown %>
   </section>
 <% end %>  
+
+
+<section id="contestant-hometown">
+  The Contestants are from these hometowns: 
+  <%  @blet.contestant_hometowns.each do |hometown| %> 
+    <strong><%= hometown %> </strong>
+  <% end %>
+</section>

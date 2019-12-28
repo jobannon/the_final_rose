@@ -1,10 +1,11 @@
 class ContestantsController < ApplicationController
   def index 
-    @blet_contests = Bachelorette.find(params[:bachelorette_id]).contestants
+    @blet = Bachelorette.find(params[:bachelorette_id])
   end 
 
   def show
-    @contestant = Contestant.find(params[:id])
+    @contestant = Contestant.find(params[:contestant_id])
+    
   end 
 end 
 

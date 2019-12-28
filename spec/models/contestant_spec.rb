@@ -6,4 +6,7 @@ RSpec.describe Contestant, type: :model do
     it {should have_many :contestant_outings}
     it {should have_many(:outings).through(:contestant_outings)}
   end
+
+  describe "instance methods" do 
+  end 
 end

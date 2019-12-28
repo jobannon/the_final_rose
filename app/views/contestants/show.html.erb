@@ -1,1 +1,9 @@
-<%= @contestant.name %>
+ 
+Name:<%= @contestant.name %>
+Season #:<%= @contestant.bachelorette.season_number %>
+Description:<%= @contestant.bachelorette.description %>
+
+<strong> Outings </strong>
+<% @contestant.outings.each do |outing| %>
+  <%= link_to outing.name, outing_path(outing) %>
+<% end %>

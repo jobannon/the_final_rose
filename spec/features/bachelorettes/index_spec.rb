@@ -3,9 +3,9 @@ require "rails_helper"
 RSpec.describe "as a visitor" do
   describe "when I visit /bachlorettes/:id" do
     before(:each) do 
-      @blet_1 = Bachelorette.create(name: "Lucy", season_number: 1) 
-      @contestant_1 = Contestant.create(name: "Jack", age: 19, hometown: "denver" )
-      @contestant_2 = Contestant.create(name: "Bob", age: 50, hometown: "texas" )
+      @blet_1 = Bachelorette.create!(name: "Lucy", season_number: 1, description: "best") 
+      @contestant_1 = Contestant.create!(name: "Jack", age: 19, hometown: "denver", bachelorette: @blet_1 )
+      @contestant_2 = Contestant.create!(name: "Bob", age: 50, hometown: "texas", bachelorette: @blet_1)
       @blet_1.contestants << @contestant_1 << @contestant_2
     end 
     it "shows me 
@@ -17,6 +17,7 @@ RSpec.describe "as a visitor" do
 
       expect(page).to have_content(@blet_1.name)
       expect(page).to have_content(@blet_1.season_number)
+      expect(page).to have_content(@blet_1.description)
       
       click_link("See Contestants")
       expect(page).to have_content(@contestant_1.name)

@@ -1,0 +1,9 @@
+<strong>Outing Information</strong>
+
+  name:<%= @outing.name %>
+  location:<%= @outing.location %>
+  when:<%= @outing.when %>
+  count: <%= @outing.contestants.count%>
+  contestants:<% @outing.contestants.each do |contestant| %>
+    <%= contestant.name %>
+  <% end %>

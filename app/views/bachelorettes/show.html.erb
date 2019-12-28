@@ -1,3 +1,10 @@
-<%= @bachelorette.name%>
-<%= @bachelorette.season_number%>
-<%= link_to "See Contestants", "/bachelorettes/#{@bachelorette.id}/contestants" %> 
+<strong>Blet show page</strong> 
+
+
+<section id="bachelorette-<%= @bachelorette.id %>">
+  Name: <%= @bachelorette.name%>
+  Season#: <%= @bachelorette.season_number%>
+  Description: <%= @bachelorette.description %>
+  Average Age of Contestants: <%= @bachelorette.average_age %>
+  <%= link_to "See Contestants", "/bachelorettes/#{@bachelorette.id}/contestants" %> 
+</section>
