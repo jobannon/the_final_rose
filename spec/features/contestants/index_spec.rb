@@ -32,7 +32,6 @@ RSpec.describe "as a visitor" do
       visit "/bachelorettes/#{@blet_1.id}/contestants"
 
       within "#contestant-hometown" do 
-        save_and_open_page
         expect(page).to have_content("denver")
         expect(page).to have_content("texas")
       end 
