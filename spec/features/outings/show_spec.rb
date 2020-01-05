@@ -17,16 +17,14 @@ RSpec.describe "as a visitor" do
       @outing_1 = Outing.create!(name: "starbucks" )
       @outing_2 = Outing.create!(name: "pizza hut")
 
-      @contestant_1.outings << @outing_1 << @outing_2 
-      @contestant_2.outings << @outing_1 << @outing_2 
+      @outing_1.contestants << @contestant_1 << @contestant_2
 
       visit outing_path(@contestant_1.outings[0]) 
 
       expect(page).to have_content(@outing_1.name)
       expect(page).to have_content(@outing_1.location)
       expect(page).to have_content(@outing_1.when)
-      expect(page).to have_content("count: 2")
-      expect(page).to have_content(@contestant_1.name)
+      expect(page).to have_content(@outing_1.contestants_count)
       expect(page).to have_content(@contestant_1.name)
     end 
   end

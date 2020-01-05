@@ -3,7 +3,8 @@
   name:<%= @outing.name %>
   location:<%= @outing.location %>
   when:<%= @outing.when %>
-  count: <%= @outing.contestants.count%>
+  count_contestants: <%= @outing.contestants_count%>
+
   contestants:<% @outing.contestants.each do |contestant| %>
     <%= contestant.name %>
   <% end %>
